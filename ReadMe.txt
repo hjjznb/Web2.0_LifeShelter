@@ -12,5 +12,5 @@ npm install node-media-server --save
 git init
 git add .
 git commit -m "Commit 1"
-git remote add origin https://github.com/hjjznb/LifeKingdom.git
+git remote add origin https://github.com/hjjznb/Web2.0_LifeShelter.git
 git push -u origin master

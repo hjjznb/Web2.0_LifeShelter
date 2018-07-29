@@ -1,5 +1,5 @@
 npm init
-npm install body-parser -save
+npm install body-parser --save
 npm install express --save
 npm install http --save
 npm install socket.io --save

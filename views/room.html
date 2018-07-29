@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/room.css" />
+    <link rel="icon" type="image/png" href="../images/icon.png"/>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome, <span class="userName"></span></h1>
+        <a href="/userProfile"><button class="button profile">My profile</button></a>
+        <button class="button logout">Logout</button><br>
+    </div>
+    <hr><br>
+
+    <div class="nav">
+        <button class="button addRoomBtn">Add Room</button>
+        <button class="button deleteRoomBtn">Delete Room</button>
+    </div>
+    <br>
+
+    <div class="content">
+        <div id='profile'>
+            <div class="addContent">
+                <label for="roomNumber">Room Number:</label>
+                <input type="number" id="roomNumber" name="roomNumber"><br>
+
+                <label for="biology">Biology:</label>
+                <select id="biology" name="biology">
+                    <option value="animal">Animal</option>
+                    <option value="plant">Plant</option>
+                </select><br>
+            </div>
+
+            <div class="deleteContent">
+                <form id="DeleteForm" action="/roomDelete" method="post">
+                    <label for="getRoomNumber">Room Number:</label>
+                    <select id="getRoomNumber" name="getRoomNumber"></select>
+                </form>
+            </div>
+        </div>
+
+        <div class="confirmCancelBtn">
+            <button class="button confirm">Confirm</button>
+            <a href="/index"><button class="button cancel">Cancel</button></a>
+        </div>
+    </div>
+
+    <script src='../js/clientjs/jquery-3.3.1.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/clientjs/room.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My profile</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/userProfile.css" />
+    <link rel="icon" type="image/png" href="../images/icon.png"/>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome, <span class="userName"></span></h1>
+        <a href="/index"><button class="button home">Home</button></a>
+        <button class="button logout">Logout</button><br>
+    </div>
+    <hr><br>
+
+    <div class="content">
+        <div id="profile"></div>
+        <div>
+            <button class="button update">Update</button>
+            <button class="button password">Change password</button>
+            <button class="button confirm">Confirm</button>
+            <button class="button cancel">Cancel</button>
+        </div>
+    </div>
+
+
+    <script src='../js/clientjs/jquery-3.3.1.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/clientjs/userProfile.js"></script>
+</body>
+</html>

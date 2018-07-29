@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/itemAdd.css" />
+    <link rel="icon" type="image/png" href="../images/icon.png"/>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome, <span class="userName"></span></h1>
+        <a href="/index"><button class="button home">Home</button></a>
+        <button class="button logout">Logout</button><br>
+    </div>
+    <hr><br>
+
+    <div class="content">
+        
+        <div class="imagebox">
+            <img class='img'>
+        </div>
+        
+        <div id='profile'>
+            <div id="animalAdd">
+                <form id='animalAddForm' method="post" action="/animalImageAdd" enctype="multipart/form-data">
+                    <input type="hidden" id="animalId" name="animalId"/>
+                    <input type="file" id="animalImage" name="animalImage" onchange='PreviewImage(this)' ><br><br>
+                </form>
+
+                <label for="animalName">Name:</label>
+                <input type="text" id="animalName" name="animalName"><br>
+
+                <label for="animalType">Type:</label>
+                <input type="text" id="animalType" name="animalType"><br>
+
+                <label for="animalVariety">Variety:</label>
+                <input type="text" id="animalVariety" name="animalVariety"><br>
+
+                <label for="animalAge">Age:</label>
+                <input type="number" id="animalAge" name="animalAge"><br>
+
+                <label for="animalGender">Gender:</label>
+                <select id="animalGender" name="animalGender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+
+                <label style='position:relative;bottom:25px;'>Finding Location:</label>
+                <textarea style='margin-top:5px;width:160px;height:50px;' type='text' id='animalFindingLocation' name='animalFindingLocation'></textarea><br>
+                
+                <label for="animalPrice">Price:</label>
+                <input type="number" id="animalPrice" name="animalPrice"><br>
+
+                <label for="animalAdopted">Adopted:</label>
+                <select id="animalAdopted" name="animalAdopted">
+                    <option value="true">True</option>
+                    <option value="false" selected>False</option>
+                </select><br>
+
+                <label for="animalHealthStatus">Health Status:</label>
+                <select id="animalHealthStatus" name="animalHealthStatus">
+                    <option value="healthy">Healthy</option>
+                    <option value="unhealthy">Unhealthy</option>
+                </select><br>
+                
+                <label for="animalRoomNumber">Room Number:</label>
+                <select id="animalRoomNumber" name="animalRoomNumber">
+                </select><br>
+            </div>
+            
+            <div id="plantAdd">
+                <form id='plantAddForm' method="post" action="/plantImageAdd" enctype="multipart/form-data">
+                    <input type="hidden" id="plantId" name="plantId"/>
+                    <input type="file" id="plantImage" name="plantImage" onchange='PreviewImage(this)' ><br><br>
+                </form>
+
+                <label for="plantName">Name:</label>
+                <input type="text" id="plantName" name="plantName"><br>
+
+                <label for="plantType">Type:</label>
+                <input type="text" id="plantType" name="plantType"><br>
+
+                <label for="plantVariety">Variety:</label>
+                <input type="text" id="plantVariety" name="plantVariety"><br>
+
+                <label for="plantAge">Age:</label>
+                <input type="number" id="plantAge" name="plantAge"><br>
+                
+                <label for="plantPrice">Price:</label>
+                <input type="number" id="plantPrice" name="plantPrice"><br>
+
+                <label for="plantAdopted">Adopted:</label>
+                <select id="plantAdopted" name="plantAdopted">
+                    <option value="true">True</option>
+                    <option value="false" selected>False</option>
+                </select><br>
+
+                <label for="plantHealthStatus">Health Status:</label>
+                <select id="plantHealthStatus" name="plantHealthStatus">
+                    <option value="healthy">Healthy</option>
+                    <option value="unhealthy">Unhealthy</option>
+                </select><br>
+                
+                <label for="plantRoomNumber">Room Number:</label>
+                <select id="plantRoomNumber" name="plantRoomNumber">
+                </select><br>
+            </div>
+        </div>
+        
+        <div class="confirmCancelBtn">
+            <button class="button confirm">Confirm</button>
+            <a href="/index"><button class="button cancel">Cancel</button></a>
+        </div>
+        
+    </div>
+
+    <script src='../js/clientjs/jquery-3.3.1.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/clientjs/itemAdd.js"></script>
+</body>
+</html>

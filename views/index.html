@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <style>
+    </style>
+    <link rel="icon" type="image/png" href="../images/icon.png" />
+</head>
+
+<body>
+    <script src="../js/clientjs/highcharts/highcharts.js"></script>
+    <script src="../js/clientjs/highcharts/data.js"></script>
+    <script src="../js/clientjs/highcharts/drilldown.js"></script>
+
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Notice</strong> You can start donating to us from now on!
+    </div>
+
+    <div class="header">
+        <h1>Welcome, <span class="userName"></span></h1>
+        <a href="/userProfile"><button class="button profile">My profile</button></a>
+        <button class="button logout">Logout</button><br>
+    </div>
+    <hr><br>
+
+    <div class="nav">
+        <button class="button animalBtn">Animal</button>
+        <button class="button plantBtn">Plant</button>
+        <label>Search by name: </label><input type='text' id='searchTxt' name='searchTxt'>
+        <button class="button searchBtn">Search</button>
+        <button class="button statisticsBtn">Health statistics</button>
+        <button class="button donateBtn">Donate</button>
+        <button class="button roomBtn">Room</button>
+
+        <!-- The Modal -->
+        <div class="modal1">
+            <!-- Modal content -->
+            <div class="modal-content1">
+                <span class="close1">&times;</span>
+                <h2>Please enter your amount:</h2>
+                <form id="donateForm" action="/donate" method="post">
+                    <input type="hidden" id="userId" name="userId">
+                    <input type="number" id="amount" name="amount">
+                </form>
+                <button class="button donateConfirmBtn">Confirm</button>
+                <p id="donateMsg"></p>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal2">
+            <!-- Modal content -->
+            <div class="modal-content2">
+                <span class="close2">&times;</span>
+                <div id="healthStatus" style="min-width: 300px; max-width: 900px; height: 400px; margin: 0 auto"></div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+    <div class="content"></div>
+
+    <script src='../js/clientjs/jquery-3.3.1.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/clientjs/index.js"></script>
+</body>
+
+</html>

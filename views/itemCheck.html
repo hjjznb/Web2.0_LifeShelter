@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/itemCheck.css" />
+    <link href="../css/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="../images/icon.png"/>
+    <script src="../js/clientjs/video.js"></script>
+    <script>
+        videojs.options.flash.swf = "../others/video-js.swf";
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome, <span class="userName"></span></h1>
+        <a href="/index"><button class="button home">Home</button></a>
+        <button class="button logout">Logout</button><br>
+    </div>
+    <hr><br>
+
+    <div class="content">
+        <div class="nav">
+            <button class="button wikiBtn">wiki</button>
+            <button class="button insBtn1">ins</button>
+            <button class="button insBtn2">ins</button>
+            <div class="facebookBtnBox">
+                <button id="facebookBtn" class="button facebookBtn" value="">facebook</button>
+                <fb:login-button id="fbBtn" size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">login-login-login-</fb:login-button>
+            </div>
+
+            <button class="button backBtn">Back</button>
+        </div>
+        <div class="locations">
+            <label><b>Finding Location:</b></label>
+            <label class="findingLocation"></label>
+            &emsp;&emsp;&emsp;&emsp;&emsp;
+            <label><b>Current Location:</b></label>
+            <label class="currentLocation"></label>
+        </div>
+        <div class="videoBox">
+            <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="500" data-setup="{}" autoplay>
+                <source src="rtmp://192.168.43.113:1935/live/stream" type="rtmp/flv"/>
+            </video>
+        </div>
+        <div class="conmentBox">
+            <textarea class="myComment" id="myComment" name="myComment" placeholder="Please enter your comments"></textarea><br>
+            <button class="button sendBtn">Send</button>
+            <div class="allComments"></div>
+        </div>
+    </div>
+
+    <script src="../js/clientjs/highcharts/highcharts.js"></script>
+    <script src="../js/clientjs/highcharts/exporting.js"></script>
+    <script src="../js/clientjs/highcharts/export-data.js"></script>
+    <script src="../js/clientjs/highcharts/highcharts-more.js"></script>
+    <script src="../js/clientjs/highcharts/modules/solid-gauge.js"></script>
+    
+    <div class="gameBtnBox">
+        <h3 class="title">Game (1 seconds intervals)</h3>
+        <div class="gameBtnSubBox">
+            <label>Whac-A-Mole1</label>
+            <button id="upBtn1" class="button upBtn">Up</button>
+            <button id="downBtn1" class="button downBtn">Down</button>
+        </div>
+
+        <div class="gameBtnSubBox">
+            <label>Whac-A-Mole2</label>
+            <button id="upBtn2" class="button upBtn">Up</button>
+            <button id="downBtn2" class="button downBtn">Down</button>
+        </div>
+
+        <div class="gameBtnSubBox">
+            <label>Whac-A-Mole3</label>
+            <button id="upBtn3" class="button upBtn">Up</button>
+            <button id="downBtn3" class="button downBtn">Down</button>
+        </div>
+
+        <div class="gameBtnSubBox">
+            <label>Whac-A-Mole4</label>
+            <button id="upBtn4" class="button upBtn">Up</button>
+            <button id="downBtn4" class="button downBtn">Down</button>
+        </div>
+    </div>
+
+    <div id="realtime_detection">
+        <div id="realtime_temperature_humidity">
+            <div class="solidgaugeTitle">Real-time Temperature and Humidity Monitoring</div>
+            <div class="solidgaugeSource">Source: IOT Smart Shelter</div>
+            <div id="container-temperature" style="width: 300px; height: 200px; float: left"></div>
+            <div id="container-humidity" style="width: 300px; height: 200px; float: left"></div>
+        </div>
+        <div id="realtime_h2s">
+            <div id="container-h2s" style="width: 350px; height: 280px; float: left"></div>
+        </div>
+    </div>
+    
+    
+    <div id="temperature_humidity" style="min-width: 310px; min-height: 400px; margin: 0 auto"></div>
+    
+    <script src='../js/clientjs/jquery-3.3.1.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/clientjs/itemCheck.js"></script>
+    <script>
+        // facebook
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '466618720416868',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        function statusChangeCallback(response) {
+            if (response.status === 'connected') {
+                console.log('Logged in and authenticated');
+                searchTxt = document.getElementById("facebookBtn").value;
+                window.open("https://www.facebook.com/search/top/?q=" + searchTxt);
+
+            } else {
+                console.log('Not authenticated');
+            }
+        }
+
+        function fb_login() {
+            FB.login(function() {}, {
+                scope: 'email,public_profile'
+            });
+        }
+    </script>
+</body>
+
+</html>

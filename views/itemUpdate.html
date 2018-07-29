@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Update</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/itemUpdate.css" />
+    <link rel="icon" type="image/png" href="../images/icon.png"/>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome, <span class="userName"></span></h1>
+        <a href="/index"><button class="button home">Home</button></a>
+        <button class="button logout">Logout</button><br>
+    </div>
+    <hr><br>
+
+    <div class="content"></div>
+    
+    <div class="confirmCancelBtn">
+        <button class="button confirm">Confirm</button>
+        <button class="button cancel">Back</button>
+    </div>
+
+    <script src='../js/clientjs/jquery-3.3.1.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/clientjs/itemUpdate.js"></script>
+</body>
+</html>

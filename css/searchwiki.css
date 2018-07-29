@@ -1,0 +1,183 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Rochester';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rochester Regular'), local('Rochester-Regular'), url(https://fonts.gstatic.com/s/rochester/v8/6ae-4KCqVa4Zy6Fif-UC2FHX.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body{
+    background-color: #a5dee4;
+	height: 80%;
+	width: 100%;
+	position: absolute;
+	overflow-y:auto;
+	overflow-x: hidden;
+}
+
+.title{
+	margin: 0 auto;
+	margin-top: 40px;
+	text-align: center; 
+	font-family:  'Rochester', cursive;
+	font-size:3em;
+	color: #808f7c;
+}
+
+.content{
+	height: 100%;
+	width: 100%;
+
+}
+
+.mainDiv{
+	height: 100%;
+	width: 100%;
+}
+
+.search-before{
+	position: relative;
+	top: 35%;
+
+	transform: translateY(-50%);
+}
+
+.getRandom{
+	font-size: 1.5em;
+	color: #fff;
+	display: inline;
+}
+.getRandom:link{
+	color:#fff;
+	text-decoration: none;
+}
+
+.getRandom:visited{
+	color:#fff;
+	text-decoration: none;
+}
+
+.getRandom:hover{
+	color: #f0a986;
+	text-decoration: none;
+}
+
+.getRandom:active{
+	color:#fff;
+	text-decoration: none;
+}
+
+.search-ico{
+	margin-top: 0.8em;
+	width: 1.8em;
+}
+
+.search-title{
+	width: 16em;
+	outline: none;
+	padding: 10px 20px;
+	padding-right: 3em;
+	border-radius: 30px;
+	border-color: #f0a986;
+	font-size: 1.2em;
+	border-style: solid;
+	display: inline;
+}
+
+.search-clear{
+	position: relative;
+	margin-left: -3em;
+	bottom: 2px;
+}
+
+.clear-ico{
+	display: none;
+	width: 1.5em;
+}
+
+.search-text{
+	margin-top: 1.2em;
+	display: inline;
+	display: none;
+}
+
+.itro{
+	margin-top: 0.8em;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+.searching{
+	position: relative;
+	display: none;
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+}
+
+.search-li{
+	list-style: none;
+	background-color: #6699a1; 
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	border-left: solid 5px #fff; 
+}
+
+.search-h3{
+	color: #fff;
+}
+
+.search-abs{
+	color: #a5dee4;
+	font-size: 1.2em;
+}
+
+.search-time{
+	color: #fbe251;
+}
+
+.search-link:link{
+	text-decoration: none;
+}
+.search-link:visited{
+	text-decoration: none;
+}
+.search-link:hover{
+	text-decoration: none;
+
+}
+.search-link:active{
+	text-decoration: none;
+}
+
+.search-li:hover{
+	border-left: solid 5px #f0a986; 
+}
+
+.button {
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+.searchBtn {
+    border: 2px solid #f0a986;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 10px;
+}
+
+.backBtn {
+    border: 2px solid #f0a986;
+    padding: 10px;
+    padding-left: 30px;
+    margin-left: 10px;
+    padding-right: 30px;
+}
